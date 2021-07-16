@@ -22,7 +22,11 @@ function MovieShows() {
       <ul>
         {result.length ? (
           result.map((serie) => (
-            <li>{serie.title}</li>
+            serie.programType === 'movie' && (
+              <li>
+                <img src={serie.images['Poster Art'].url} alt={serie.title} />
+              </li>
+            )
           ))
         ) : ('Loading')}
         {}
