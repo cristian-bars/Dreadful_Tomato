@@ -19,6 +19,7 @@ import {
 } from '@carbon/icons-react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import './index.scss';
 
 function Navigation() {
   return (
