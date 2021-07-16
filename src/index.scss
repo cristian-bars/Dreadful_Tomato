@@ -2,3 +2,7 @@
 @import 'carbon-components/scss/globals/scss/colors';
 @import 'carbon-components/scss/globals/scss/theme';
 @import 'carbon-components/scss/globals/scss/spacing';
+
+main {
+    padding: 0 !important;
+}

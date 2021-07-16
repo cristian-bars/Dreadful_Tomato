@@ -18,6 +18,7 @@ import {
   Logout32
 } from '@carbon/icons-react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.png';
 
 function Navigation() {
   return (
@@ -31,7 +32,7 @@ function Navigation() {
             isActive={isSideNavExpanded}
           />
           <HeaderName element={Link} to="/" prefix="">
-            <img src="../../../assets/logo.png" alt="Logo" />
+            <img className="logoImg" src={logo} alt="Logo" />
           </HeaderName>
           <HeaderNavigation aria-label="Carbon Tutorial">
             <HeaderMenuItem element={Link} to="/tvshows">TV Shows</HeaderMenuItem>
