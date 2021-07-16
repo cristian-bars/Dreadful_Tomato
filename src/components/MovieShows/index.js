@@ -21,10 +21,10 @@ function MovieShows() {
     <div>
       <ul className="elementsList">
         {result.length ? (
-          result.map((serie) => (
-            serie.programType === 'movie' && (
-              <li className="elementDetail">
-                <img src={serie.images['Poster Art'].url} alt={serie.title} />
+          result.map((movie) => (
+            movie.programType === 'movie' && (
+              <li id={movie.title} className="elementDetail" key={movie.title}>
+                <img src={movie.images['Poster Art'].url} alt={movie.title} />
               </li>
             )
           ))
