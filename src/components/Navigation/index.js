@@ -3,20 +3,57 @@ import React from 'react';
 import {
   Header,
   HeaderContainer,
+  HeaderGlobalAction,
+  HeaderGlobalBar,
+  HeaderName,
   HeaderNavigation,
-  HeaderMenuItem
+  HeaderMenuButton,
+  HeaderMenuItem,
+  SkipToContent,
+  SideNav,
+  SideNavItems,
+  HeaderSideNavItems
 } from 'carbon-components-react';
+import {
+  Logout32
+} from '@carbon/icons-react';
 import { Link } from 'react-router-dom';
 
 function Navigation() {
   return (
     <HeaderContainer
-      render={() => (
+      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
         <Header aria-label="Carbon Tutorial">
+          <SkipToContent />
+          <HeaderMenuButton
+            aria-label="Open menu"
+            onClick={onClickSideNavExpand}
+            isActive={isSideNavExpanded}
+          />
+          <HeaderName element={Link} to="/" prefix="">
+            <img src="../../../assets/logo.png" alt="Logo" />
+          </HeaderName>
           <HeaderNavigation aria-label="Carbon Tutorial">
-            <HeaderMenuItem element={Link} to="/tvshows">TVShows</HeaderMenuItem>
-            <HeaderMenuItem element={Link} to="/movieshows">MovieShows</HeaderMenuItem>
+            <HeaderMenuItem element={Link} to="/tvshows">TV Shows</HeaderMenuItem>
+            <HeaderMenuItem element={Link} to="/movieshows">Movie Shows</HeaderMenuItem>
           </HeaderNavigation>
+          <SideNav
+            aria-label="Side navigation"
+            expanded={isSideNavExpanded}
+            isPersistent={false}
+          >
+            <SideNavItems>
+              <HeaderSideNavItems>
+                <HeaderMenuItem href="/tvshows">TV Shows</HeaderMenuItem>
+                <HeaderMenuItem href="/movieshows">Movie Shows</HeaderMenuItem>
+              </HeaderSideNavItems>
+            </SideNavItems>
+          </SideNav>
+          <HeaderGlobalBar>
+            <HeaderGlobalAction aria-label="Notifications">
+              <Logout32 />
+            </HeaderGlobalAction>
+          </HeaderGlobalBar>
         </Header>
       )}
     />
