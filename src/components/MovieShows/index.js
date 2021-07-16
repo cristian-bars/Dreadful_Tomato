@@ -19,11 +19,11 @@ function MovieShows() {
 
   return (
     <div>
-      <ul>
+      <ul className="elementsList">
         {result.length ? (
           result.map((serie) => (
             serie.programType === 'movie' && (
-              <li>
+              <li className="elementDetail">
                 <img src={serie.images['Poster Art'].url} alt={serie.title} />
               </li>
             )

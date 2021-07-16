@@ -1,0 +1,14 @@
+.elementsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.elementDetail {
+    width: 17%;
+    cursor: pointer;
+}
+
+.elementDetail img {
+    width: 100%;
+}
