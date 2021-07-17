@@ -4,7 +4,7 @@ import ElementsList from '../ElementsList';
 
 function TvShows() {
   return (
-    <ElementsList component="series" />
+    <ElementsList component="series" title="series" />
   );
 }
 

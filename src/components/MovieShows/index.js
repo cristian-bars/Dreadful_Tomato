@@ -5,7 +5,7 @@ import ElementsList from '../ElementsList';
 
 function MovieShows() {
   return (
-    <ElementsList component="movie" />
+    <ElementsList component="movie" title="movies" />
   );
 }
 

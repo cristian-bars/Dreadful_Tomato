@@ -7,6 +7,7 @@ import LandingPage from './components/LandingPage';
 import TvShows from './components/TvShows';
 import MovieShows from './components/MovieShows';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/movieshows" component={MovieShows} />
         </Switch>
       </Content>
+      <Footer />
     </>
   );
 }

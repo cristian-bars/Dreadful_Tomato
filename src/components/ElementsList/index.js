@@ -1,12 +1,13 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 import {
   UnorderedList,
-  ListItem
+  ListItem,
+  Loading
 } from 'carbon-components-react';
 
 function MovieShows(style) {
-  console.log(style);
   const useTodos = () => {
     const [todos, setTodos] = useState([]);
 
@@ -23,21 +24,41 @@ function MovieShows(style) {
   const result = useTodos();
 
   return (
-    <div>
+    <div className="contentList">
+      <div className="listTitle">
+        Popular
+        {' '}
+        {style.title}
+      </div>
       <UnorderedList className="elementsList">
-        {/* <ul className="elementsList"> */}
         {result.length ? (
           result.map((movie) => (
             movie.programType === style.component && (
               <ListItem id={movie.title} className="elementDetail" key={movie.title}>
                 <img src={movie.images['Poster Art'].url} alt={movie.title} />
+                <div className="backDescription" />
+                <div className="description">
+                  <div className="title">
+                    {movie.title}
+                  </div>
+                  <div className="year">
+                    {movie.releaseYear}
+                  </div>
+                  <div className="descriptions">
+                    {movie.description}
+                  </div>
+
+                </div>
               </ListItem>
             )
           ))
-        ) : ('Loading')}
-        {}
+        ) : (
+          <Loading
+            description="Active loading indicator"
+            withOverlay={false}
+          />
+        )}
       </UnorderedList>
-      {/* </ul> */}
     </div>
   );
 }
