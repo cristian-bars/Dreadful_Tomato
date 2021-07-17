@@ -10,6 +10,7 @@ import {
 } from 'carbon-components-react';
 
 function MovieShows(style) {
+  const [currentItem, setCurrentItem] = useState();
   const useTodos = () => {
     const [todos, setTodos] = useState([]);
 
@@ -27,12 +28,19 @@ function MovieShows(style) {
 
   const items = [
     {
+      id: 'year-0',
+      label: 'All',
+      value: undefined
+    },
+    {
       id: 'year-1',
-      label: '1998'
+      label: '2015',
+      value: 2015
     },
     {
       id: 'year-2',
-      label: '1999'
+      label: '2016',
+      value: 2016
     }
   ];
 
@@ -47,8 +55,11 @@ function MovieShows(style) {
           ariaLabel="Dropdown"
           id="carbon-dropdown-example"
           items={items}
-          label="Year"
+          label="Select year"
           field="small"
+          onChange={({ selectedItem }) => setCurrentItem(selectedItem.value)}
+          selectedItem={currentItem}
+          initialSelectedItem={items[0]}
         />
       </div>
       <div className="contentList">
@@ -58,25 +69,48 @@ function MovieShows(style) {
           {style.title}
         </div>
         <UnorderedList className="elementsList">
+          {console.log(currentItem)}
           {result.length ? (
             result.map((movie) => (
               movie.programType === style.component && (
-              <ListItem id={movie.title} className="elementDetail" key={movie.title}>
-                <img src={movie.images['Poster Art'].url} alt={movie.title} />
-                <div className="backDescription" />
-                <div className="description">
-                  <div className="title">
-                    {movie.title}
-                  </div>
-                  <div className="year">
-                    {movie.releaseYear}
-                  </div>
-                  <div className="descriptions">
-                    {movie.description}
-                  </div>
+                currentItem !== undefined ? (
+                  movie.releaseYear === currentItem && (
+                    <ListItem id={movie.title} className="elementDetail" key={movie.title}>
+                      <img src={movie.images['Poster Art'].url} alt={movie.title} />
+                      <div className="backDescription" />
+                      <div className="description">
+                        <div className="title">
+                          {movie.title}
+                        </div>
+                        <div className="year">
+                          {movie.releaseYear}
+                        </div>
+                        <div className="descriptions">
+                          {movie.description}
+                        </div>
 
-                </div>
-              </ListItem>
+                      </div>
+                    </ListItem>
+                  )
+                ) : (
+                  <ListItem id={movie.title} className="elementDetail" key={movie.title}>
+                    <img src={movie.images['Poster Art'].url} alt={movie.title} />
+                    <div className="backDescription" />
+                    <div className="description">
+                      <div className="title">
+                        {movie.title}
+                      </div>
+                      <div className="year">
+                        {movie.releaseYear}
+                      </div>
+                      <div className="descriptions">
+                        {movie.description}
+                      </div>
+
+                    </div>
+                  </ListItem>
+                )
+
               )
             ))
           ) : (
