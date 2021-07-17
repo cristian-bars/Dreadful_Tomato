@@ -2,9 +2,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 import {
-  UnorderedList,
+  Dropdown,
   ListItem,
-  Loading
+  Loading,
+  Search,
+  UnorderedList
 } from 'carbon-components-react';
 
 function MovieShows(style) {
@@ -23,17 +25,42 @@ function MovieShows(style) {
 
   const result = useTodos();
 
+  const items = [
+    {
+      id: 'year-1',
+      label: '1998'
+    },
+    {
+      id: 'year-2',
+      label: '1999'
+    }
+  ];
+
   return (
-    <div className="contentList">
-      <div className="listTitle">
-        Popular
-        {' '}
-        {style.title}
+    <>
+      <div className="searchSpace">
+        <Search
+          id="search-1"
+          placeHolderText="Search"
+        />
+        <Dropdown
+          ariaLabel="Dropdown"
+          id="carbon-dropdown-example"
+          items={items}
+          label="Year"
+          field="small"
+        />
       </div>
-      <UnorderedList className="elementsList">
-        {result.length ? (
-          result.map((movie) => (
-            movie.programType === style.component && (
+      <div className="contentList">
+        <div className="listTitle">
+          Popular
+          {' '}
+          {style.title}
+        </div>
+        <UnorderedList className="elementsList">
+          {result.length ? (
+            result.map((movie) => (
+              movie.programType === style.component && (
               <ListItem id={movie.title} className="elementDetail" key={movie.title}>
                 <img src={movie.images['Poster Art'].url} alt={movie.title} />
                 <div className="backDescription" />
@@ -50,16 +77,17 @@ function MovieShows(style) {
 
                 </div>
               </ListItem>
-            )
-          ))
-        ) : (
-          <Loading
-            description="Active loading indicator"
-            withOverlay={false}
-          />
-        )}
-      </UnorderedList>
-    </div>
+              )
+            ))
+          ) : (
+            <Loading
+              description="Active loading indicator"
+              withOverlay={false}
+            />
+          )}
+        </UnorderedList>
+      </div>
+    </>
   );
 }
 

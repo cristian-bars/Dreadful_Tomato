@@ -6,3 +6,16 @@
 .bx--content {
     background-color: #2d2c2c !important;
 }
+
+.bx--header__action:active, a.bx--header__menu-item:active, a.bx--header__menu-item:hover, a.bx--header__menu-item:focus {
+    background-color: red !important;
+}
+
+.bx--search {
+    width: 50%;
+}
+
+.bx--search--xl .bx--search-input {
+    height: 2rem;
+    border-radius: 25px;
+}
