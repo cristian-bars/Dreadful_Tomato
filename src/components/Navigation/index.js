@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import {
+  Dropdown,
   Header,
   HeaderContainer,
   HeaderGlobalAction,
@@ -22,6 +23,16 @@ import logo from '../../assets/logo.png';
 import './index.scss';
 
 function Navigation() {
+  const items = [
+    {
+      id: 'year-1',
+      label: '1998'
+    },
+    {
+      id: 'year-2',
+      label: '1999'
+    }
+  ];
   return (
     <HeaderContainer
       render={({ isSideNavExpanded, onClickSideNavExpand }) => (
@@ -51,6 +62,13 @@ function Navigation() {
               </HeaderSideNavItems>
             </SideNavItems>
           </SideNav>
+          <Dropdown
+            ariaLabel="Dropdown"
+            id="carbon-dropdown-example"
+            items={items}
+            label="Year"
+            field="small"
+          />
           <HeaderGlobalBar>
             <HeaderGlobalAction aria-label="Notifications">
               <Logout32 />

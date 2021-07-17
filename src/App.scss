@@ -1,3 +1,22 @@
 @import './components/LandingPage/index.scss';
 @import './components/MovieShows/index.scss';
 @import './components/TvShows/index.scss';
+
+.elementsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bx--list--unordered > .bx--list__item::before {
+    content: "" !important;
+}
+
+.elementDetail {
+    width: 17%;
+    cursor: pointer;
+}
+
+.elementDetail img {
+    width: 100%;
+}
