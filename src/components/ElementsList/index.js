@@ -34,6 +34,26 @@ function MovieShows(style) {
     },
     {
       id: 'year-1',
+      label: '2011',
+      value: 2011
+    },
+    {
+      id: 'year-2',
+      label: '2012',
+      value: 2012
+    },
+    {
+      id: 'year-1',
+      label: '2013',
+      value: 2013
+    },
+    {
+      id: 'year-2',
+      label: '2014',
+      value: 2014
+    },
+    {
+      id: 'year-1',
       label: '2015',
       value: 2015
     },
@@ -69,7 +89,6 @@ function MovieShows(style) {
           {style.title}
         </div>
         <UnorderedList className="elementsList">
-          {console.log(currentItem)}
           {result.length ? (
             result.map((movie) => (
               movie.programType === style.component && (
