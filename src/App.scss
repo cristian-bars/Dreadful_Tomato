@@ -20,3 +20,13 @@
     height: 2rem !important;
     border-radius: 25px;
 }
+
+.bx--dropdown__wrapper {
+    width: 110px;
+    display: flex;
+    align-items: center;
+}
+
+.bx--list--unordered > .bx--list__item::before {
+    content: "" !important;
+}
