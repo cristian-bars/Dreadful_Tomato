@@ -18,15 +18,44 @@ footer {
     color: white;
     display: flex;
     align-items: center;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.footerListItem {
+    color: white !important;
+    cursor: pointer;
 }
 
 .footerApps {
     padding: 10px;
     display: flex;
+    width: 50%;
+    justify-content: space-evenly;
 }
 
 .footerCopy {
     padding: 10px;
     color: white;
     text-transform: capitalize;
+}
+
+
+@media (max-width: 600px) {
+    .footerLogo, .footerItems, .footerApps, .footerCopy {
+        width: 100%;
+    }
+    
+    .footerItems {
+        display: unset;
+    }
+    
+    .footerListItem {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footerCopy {
+        text-align: center;
+    }
 }

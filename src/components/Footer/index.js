@@ -5,18 +5,18 @@ import logo from '../../assets/logo.png';
 import AppStore from '../../assets/app store.png';
 import GooglePlay from '../../assets/google-play.png';
 
-function Navigation() {
+function Footer() {
   return (
     <footer>
       <div className="footerLogo">
         <img className="logoImg" src={logo} alt="Logo" />
       </div>
       <UnorderedList className="footerItems">
-        <ListItem>Home</ListItem>
-        <ListItem>Terms of Use</ListItem>
-        <ListItem>Legal Notices</ListItem>
-        <ListItem>Help</ListItem>
-        <ListItem>Manage Account</ListItem>
+        <ListItem className="footerListItem">Home</ListItem>
+        <ListItem className="footerListItem">Terms of Use</ListItem>
+        <ListItem className="footerListItem">Legal Notices</ListItem>
+        <ListItem className="footerListItem">Help</ListItem>
+        <ListItem className="footerListItem">Manage Account</ListItem>
       </UnorderedList>
       <UnorderedList className="footerApps">
         <ListItem><img className="logoApp" src={AppStore} alt="Logo" /></ListItem>
@@ -29,4 +29,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default Footer;

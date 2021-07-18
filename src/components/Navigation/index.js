@@ -46,8 +46,8 @@ function Navigation() {
           >
             <SideNavItems>
               <HeaderSideNavItems>
-                <HeaderMenuItem href="/tvshows">TV Shows</HeaderMenuItem>
-                <HeaderMenuItem href="/movieshows">Movie Shows</HeaderMenuItem>
+                <HeaderMenuItem element={Link} to="/tvshows">TV Shows</HeaderMenuItem>
+                <HeaderMenuItem element={Link} to="/movieshows">Movie Shows</HeaderMenuItem>
               </HeaderSideNavItems>
             </SideNavItems>
           </SideNav>

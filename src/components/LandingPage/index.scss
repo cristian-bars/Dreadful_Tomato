@@ -1,3 +1,37 @@
+.content {
+    display: flex;
+}
+
+.content a {
+    text-decoration: none;
+}
+
+.content a:hover .typeTitle, .content a:hover .landingImg {
+    opacity: 1;
+}
+
 .landingImg {
-    width: 50%;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.typeTitle {
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.6;
+    padding: 25px;
+}
+
+@media (max-width: 600px) {
+    .content a {
+        width: 80%;
+        justify-content: center;
+    }
+    
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -8,23 +8,26 @@ import {
   Search,
   UnorderedList
 } from 'carbon-components-react';
+import {
+  CalendarHeatMap32
+} from '@carbon/icons-react';
 
 function MovieShows(style) {
   const [currentItem, setCurrentItem] = useState();
-  const useTodos = () => {
-    const [todos, setTodos] = useState([]);
+  const useAll = () => {
+    const [todos, setAll] = useState([]);
 
     useEffect(() => {
       fetch('https://gitlab.com/-/snippets/2041384/raw/master/data.json')
         .then(async (response) => {
-          if (response.ok) setTodos(await response.json());
+          if (response.ok) setAll(await response.json());
         });
     }, []);
 
     return todos.entries;
   };
 
-  const result = useTodos();
+  const result = useAll();
 
   const items = [
     {
@@ -96,12 +99,17 @@ function MovieShows(style) {
                   movie.releaseYear === currentItem && (
                     <ListItem id={movie.title} className="elementDetail" key={movie.title}>
                       <img src={movie.images['Poster Art'].url} alt={movie.title} />
+                      <div className="elementTitle">
+                        {movie.title}
+                      </div>
                       <div className="backDescription" />
                       <div className="description">
                         <div className="title">
                           {movie.title}
                         </div>
                         <div className="year">
+                          <CalendarHeatMap32 />
+                          {' '}
                           {movie.releaseYear}
                         </div>
                         <div className="descriptions">
@@ -114,12 +122,17 @@ function MovieShows(style) {
                 ) : (
                   <ListItem id={movie.title} className="elementDetail" key={movie.title}>
                     <img src={movie.images['Poster Art'].url} alt={movie.title} />
+                    <div className="elementTitle">
+                      {movie.title}
+                    </div>
                     <div className="backDescription" />
                     <div className="description">
                       <div className="title">
                         {movie.title}
                       </div>
                       <div className="year">
+                        <CalendarHeatMap32 className="calendarIcon" />
+                        {' '}
                         {movie.releaseYear}
                       </div>
                       <div className="descriptions">

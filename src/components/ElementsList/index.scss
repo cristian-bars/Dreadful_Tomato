@@ -19,6 +19,16 @@
     content: "" !important;
 }
 
+.elementTitle {
+    position: absolute;
+    width: 100%;
+    color: white;
+    background: black;
+    opacity: 0.6;
+    bottom: 3px;
+    padding: 10px;
+}
+
 .elementDetail {
     width: 20%;
     cursor: pointer;
@@ -46,7 +56,18 @@
 }
 
 .elementDetail:hover .description {
-    visibility:visible
+    visibility: visible;
+}
+
+.elementDetail:hover .elementTitle {
+    visibility: hidden;
+}
+.year {
+    display: flex;
+    align-items: center;
+}
+.calendarIcon {
+    width: 15px;
 }
 
 .searchSpace {
@@ -58,4 +79,12 @@
 
 .bx--dropdown__wrapper {
     width: 110px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .elementDetail {
+        width: 50%;
+    }
 }
